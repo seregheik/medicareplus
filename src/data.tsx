@@ -13,6 +13,7 @@ import { MdLocationPin } from "react-icons/md";
 import { GrUserExpert } from "react-icons/gr";
 import { FaPrescription } from "react-icons/fa6";
 import { GrResources } from "react-icons/gr";
+import { phoneadimg } from "./components/iconsComponent";
 
 
 
@@ -31,6 +32,9 @@ export const HomePagecontent = {
         pharmacies with ease",
   feature: "Digital Pharmacy",
   featureQuestion: "How does this work?",
+  AdSubHead: "Shop",
+  AdMainHead: "Shop from any Pharmacy Near you and Search for your medication.",
+  AdImage: phoneadimg,
   appearance: 'col-sm-12 col-lg-4 col-md-6',
   testimonyOne: {
     name: "Victoria Ero",
@@ -50,31 +54,31 @@ export const HomePagecontent = {
       "The app is very user friendly and helpful when searching for drugs.",
   },
   featureMessages: [
-    {
-      icon: <LanguageIcon />,
-      title: "Step One",
-      text: "Visit our website or download the app",
-      appearance: ' col-lg-3',
-    },
-    {
-      icon: <AppRegistrationIcon />,
-      title: "Step Two",
-      text: "Sign Up",
-      appearance: ' col-lg-3',
-    },
-    {
-      icon: <SearchIcon />,
-      title: "Step Two",
-      text: "Search Medication",
-      appearance: ' col-lg-3',
-    },
-    {
-      icon: <AppRegistrationIcon />,
-      title: "Step Two",
-      text: "Sign Up",
-      appearance: ' col-lg-3',
-    },
-  ],
+  {
+    icon: <LanguageIcon />,
+    title: "Step One",
+    text: "Visit our website or download the app",
+    appearance: ' col-lg-3',
+  },
+  {
+    icon: <AppRegistrationIcon />,
+    title: "Step Two",
+    text: "Sign Up as a user or Pharmacist",
+    appearance: ' col-lg-3',
+  },
+  {
+    icon: <SearchIcon />,
+    title: "Step Three",
+    text: "Search Medication or Pharmacies, get location based results.",
+    appearance: ' col-lg-3',
+  },
+  {
+    icon: <AppRegistrationIcon />,
+    title: "Step Four",
+    text: "Order medication, Converse with Pharmacists, Get medical Advice, a world of health awaits you",
+    appearance: ' col-lg-3',
+  },
+],
 };
 export const SearchPageContent = {
   search: <div>a</div>,
@@ -105,7 +109,7 @@ export const CtaDownloadAppData = {
 export const AboutContent = {
   feature: "Why Medihale",
   featureQuestion:
-  "Choosing our app means embracing a new era of pharmaceutical care – one that is personalized, convenient, and tailored to meet your unique health needs.",
+  "Embracing a new era of pharmaceutical care tailored to meet your health needs.",
 featureMessages: [
   {
     icon: <IoAccessibility/>,

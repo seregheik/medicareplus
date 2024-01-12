@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 import hero from '../assets/images/hero.svg'
 import { Paper } from "@mui/material";
+import Rating from "@mui/material/Rating";
+import ShopAd from '../components/ShopAd';
 
 import CtaDownloadApp from "../components/CtaDownloadApp";
 import HowItWorks from "../components/HowItWorks";
@@ -24,7 +25,10 @@ const Home = (props: any) => {
         </div>
       </section>
       <HowItWorks information={props.information}/>
-      <section className="pt-5 py-5 testimonials">
+      <section className='container'>
+        <ShopAd information={props.information}/>
+      </section>
+      <section className="pt-5 py-5 bg-light testimonials">
         <h2 className="pt-5 text-primary fw-bold display-6" >Testimonials</h2>
         <div className="container">
         <div className="testimony-block row">
@@ -43,6 +47,7 @@ const Home = (props: any) => {
                 <div className="title">
                   {props.information.testimonyOne.title}
                 </div>
+                <Rating name="read-only" value={5} readOnly />
               </div>
             </div>
           </Paper>
@@ -60,6 +65,7 @@ const Home = (props: any) => {
                 <div className="title">
                   {props.information.testimonyTwo.title}
                 </div>
+                <Rating name="read-only" value={5} readOnly />
               </div>
             </div>
           </Paper>
@@ -77,6 +83,7 @@ const Home = (props: any) => {
                 <div className="title">
                   {props.information.testimonyThree.title}
                 </div>
+                <Rating name="read-only" value={5} readOnly />
               </div>
             </div>
           </Paper>
@@ -86,6 +93,7 @@ const Home = (props: any) => {
       <section id="cta" className="bg-secondary">
       <CtaDownloadApp/>
       </section>
+     
     </div>
   );
 };
