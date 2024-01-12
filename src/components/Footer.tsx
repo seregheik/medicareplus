@@ -1,6 +1,7 @@
 import Nav from "react-bootstrap/Nav";
 import Image from "react-bootstrap/Image";
 import main_icon from "../assets/icons/logodark.png";
+import { Link } from "react-router-dom";
 import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
@@ -8,62 +9,62 @@ const Footer = () => {
     <div className="container text-light">
       <div className="row py-5 px-3">
         <div className="col-sm-12 col-md-7 col-lg-3 py-3">
-          <a href="/" className="nav-link-footer">
+          <Link to="/" className="nav-link-footer">
             <Image style={{ maxWidth: 140 }} src={main_icon}></Image>
-          </a>
+          </Link>
         </div>
         <div className="col-sm-12 col-md-5 col-lg-3 py-3">
           <div className="flex-column nav py-2">
             <div className="nav-item">
-              <a href="/contact-us" className="nav-link-footer">
+              <Link to="/contact-us" className="nav-link-footer">
                 Need Help
-              </a>
+              </Link>
             </div>
-            <a href="/faq" className="nav-link-footer">
+            <Link to="/faq" className="nav-link-footer">
               Faq
-            </a>
-            <a href="/about-us#ourTeam" className="nav-link-footer">
+            </Link>
+            <Link to="/about-us#ourTeam" className="nav-link-footer">
               Meet The Team
-            </a>
-            <a href="" className="nav-link-footer">
+            </Link>
+            <Link to="" className="nav-link-footer">
               Falcon Road
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-sm-12 col-md-4 col-lg-2 py-3">
           <Nav className="flex-column py-2">
             <p className="fw-bold fs-5">Information</p>
-            <a className="nav-link-footer" href="contact-us">
+            <Link className="nav-link-footer" to="contact-us">
               Contact Us
-            </a>
-            <a className="nav-link-footer" href="/about-us">
+            </Link>
+            <Link className="nav-link-footer" to="/about-us">
               About Us
-            </a>
-            <a className="nav-link-footer" href="privacy-policy">
+            </Link>
+            <Link className="nav-link-footer" to="privacy-policy">
               Privay Policy
-            </a>
-            <a className="nav-link-footer" href="terms-and-conditions">
+            </Link>
+            <Link className="nav-link-footer" to="terms-and-conditions">
               Terms and Conditions
-            </a>
+            </Link>
           </Nav>
         </div>
         <div className="col-sm-12 col-md-4 col-lg-2 py-3">
           <Nav className="flex-column py-2">
             <p className="fw-bold fs-5">Accounts</p>
-            <a className="nav-link-footer" href="/log-in">
+            <Link className="nav-link-footer" to="/log-in">
               Log In
-            </a>
-            <a className="nav-link-footer" href="/sign-up">
+            </Link>
+            <Link className="nav-link-footer" to="/sign-up">
               Sign Up
-            </a>
+            </Link>
           </Nav>
         </div>
         <div className="col-sm-12 col-md-4 col-lg-2 py-3">
           <Nav className="flex-column py-2">
             <p className="fw-bold fs-5">Countries</p>
-            <a href="#" className="nav-link-footer">
+            <Link to="#" className="nav-link-footer">
               Nigeria
-            </a>
+            </Link>
           </Nav>
         </div>
         <div className="col-sm-12 col-md-9  tex-sm-center text-md-start">

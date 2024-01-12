@@ -20,37 +20,37 @@ const NavBar = () => {
         <Nav className="me-auto">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a href="/" className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about-us">
+              <Link className="nav-link" to="/about-us">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/contact-us">
+              <Link className="nav-link" to="/contact-us">
                 Contact
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/pharmacies">
+              <Link className="nav-link" to="/pharmacies">
                 Pharmacies near you
-              </a>
+              </Link>
             </li>
           </ul>
         </Nav>
         <div className="nav d-flex justify-content-center ms-auto">
         <div className="nav-link">
-          <a href="/log-in" className="btn btn-primary">
+          <Link to="/log-in" className="btn btn-primary">
             Sign In
-          </a>
+          </Link>
         </div>
         <div className="nav-link">
-          <a className="btn btn-secondary" href="/sign-up">
+          <Link className="btn btn-secondary" to="/sign-up">
             Sign Up
-          </a>
+          </Link>
         </div>
       </div>
       </Navbar.Collapse>

@@ -36,9 +36,13 @@ const Login = () => {
             <Button type='submit' className="btn btn-primary">Sign In</Button>
           </div>
         </form>
-        <span>
-          Don't have an account?{" "}
-          <Link to="/sign-up" className="primary-color nav-link">
+       
+        <span className="d-flex justify-content-center">
+        Don't have an account?
+          <Link
+            to="/sign-up"
+            className="primary-color px-2 fw-semibold nav-link"
+          >
             Create Account
           </Link>
         </span>

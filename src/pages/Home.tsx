@@ -2,6 +2,7 @@ import hero from '../assets/images/hero.svg'
 import { Paper } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import ShopAd from '../components/ShopAd';
+import { Link } from 'react-router-dom';
 
 import CtaDownloadApp from "../components/CtaDownloadApp";
 import HowItWorks from "../components/HowItWorks";
@@ -17,7 +18,7 @@ const Home = (props: any) => {
               {props.information.homePageIntro}
             </h1>
             <p className="fs-4">{props.information.description}</p>
-            <a href='/sign-up' className="btn  btn-secondary">Start here</a>
+            <Link to='/sign-up' className="btn  btn-secondary">Start here</Link>
           </div>
           <div className="col-sm-12 col-lg-6 text-center image-container">
             <img className="img-fluid" src={hero} alt="" />
