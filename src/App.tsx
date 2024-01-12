@@ -19,7 +19,6 @@ import {
   PrivacyPolicies,
 } from "./data";
 import Privacy from "./pages/PrivacyPolicy";
-import GoToTop from "./components/GoToTop";
 
 function App() {
   return (

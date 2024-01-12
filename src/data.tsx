@@ -1,5 +1,4 @@
 import { iconsvgimg } from "./components/iconsComponent";
-import { FaRegBuilding } from "react-icons/fa";
 import LanguageIcon from "@mui/icons-material/Language";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import SearchIcon from "@mui/icons-material/Search";

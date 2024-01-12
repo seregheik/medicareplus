@@ -1,4 +1,3 @@
-import React from 'react'
 import iconsvg from '../assets/icons/logo.svg'
 import phonead from '../assets/images/ad.png'
 
