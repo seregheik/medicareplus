@@ -19,7 +19,7 @@ import { phoneadimg } from "./components/iconsComponent";
 
 
 export const Title = {
-  title: "Health Check Consult",
+  title: "MediHale Consult",
 };
 export const HomePagecontent = {
   homePageIntro:
@@ -149,7 +149,7 @@ featureMessages: [
 ],
 };
 export const ContactDetails ={
-    feature: "Why Medihale",
+    feature: "Want to Reach us?",
     featureQuestion:
       "Contact Us",
       featureMessages: [

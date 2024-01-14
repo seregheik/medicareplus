@@ -41,7 +41,7 @@ const Footer = () => {
               About Us
             </Link>
             <Link className="nav-link-footer" to="privacy-policy">
-              Privay Policy
+              Privacy Policy
             </Link>
             <Link className="nav-link-footer" to="terms-and-conditions">
               Terms and Conditions
