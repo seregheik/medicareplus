@@ -21,14 +21,15 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         </div>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto text-center">
             <Nav.Link href="#">
               <ul className="navbar-nav">
-                <Nav.Link href="" className="nav-item">
+                <Nav.Link href="" className="nav-item"></Nav.Link>
+                <li className="nav-item">
                   <NavLink to="/" className="nav-link">
                     Home
                   </NavLink>
-                </Nav.Link>
+                </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="about-us">
                     About
@@ -45,6 +46,11 @@ const NavBar = () => {
                   </NavLink>
                 </li>
               </ul>
+            </Nav.Link>
+            
+          </Nav>
+          <Nav>
+          <Nav.Link className="" href="">
               <div className="nav d-flex justify-content-center ms-auto">
                 <div className="nav-link">
                   <Link to="log-in" className="btn btn-primary">
