@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { motion } from 'framer-motion';
+
 
 const Signup = () => {
   const schema = yup.object().shape({
@@ -31,7 +33,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="d-flex vh-75 justify-content-center py-5">
+    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="d-flex vh-75 justify-content-center py-5">
       <Container className="w-75 text-center py-5" style={{ maxWidth: "30em" }}>
         <div className="login">
           <div className="team-main-title pb-5 text-primary fw-bold fs-4">
@@ -101,7 +103,7 @@ const Signup = () => {
         {/* <GoogleAuth></GoogleAuth> */}
         {/* <AppleAuth></AppleAuth> */}
       </Container>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,12 +1,12 @@
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react"
-
+import { motion } from 'framer-motion';
 const TermsAndConditions = (props: any) => {
   const hey = [{yam:'r', p:'t'},{yam:'t', p:'rrr'}]
   const Termsdata = (props.information.termsofservice)
   console.log(Termsdata)
   console.log(hey)
   return (
-    <section className='container'>
+    <motion.section initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className='container'>
       <h1 className="text-center text-3xl text-primary font-bold mt-8">Terms and Conditions</h1>
       <div className="terms text-start">
       {Termsdata.map((termsofservice: {
@@ -22,7 +22,7 @@ const TermsAndConditions = (props: any) => {
         )
       })}
       </div>
-    </section>
+    </motion.section>
   )
 }
 

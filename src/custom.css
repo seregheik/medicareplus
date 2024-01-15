@@ -215,9 +215,9 @@
   --bs-btn-disabled-border-color: #b52551;
 }
 
-/* .header-info {
-  font-size: 3rem !important;
-} */
+.header-info {
+  min-height: 21vh;
+}
 
 /* #cta {
   background-color: #B52551;
@@ -337,3 +337,7 @@
 -webkit-box-shadow: 0px 0px 24px 3px rgba(0,0,0,0.1);
 -moz-box-shadow: 0px 0px 24px 3px rgba(0,0,0,0.1);
 }
+
+/* .minheightdis {
+  min-height: 22rem;
+} */

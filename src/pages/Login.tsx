@@ -2,10 +2,11 @@
 // import AppleAuth from "./AppleAuth";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const Login = () => {
   return (
-    <div className="d-flex vh-75 justify-content-center py-5">
+    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="d-flex vh-75 justify-content-center py-5">
      
       <Container className="w-75 text-center py-5" style={{maxWidth:'30em'}}>
       <div className="login">
@@ -38,18 +39,18 @@ const Login = () => {
         </form>
        
         <span className="d-flex justify-content-center">
-        Don't have an account?
+        New to Medihale?
           <Link
             to="/sign-up"
             className="primary-color px-2 fw-semibold nav-link"
           >
-            Create Account
+           Sign Up
           </Link>
         </span>
         {/* <GoogleAuth></GoogleAuth> */}
         {/* <AppleAuth></AppleAuth> */}
       </Container>
-    </div>
+    </motion.div>
   );
 };
 

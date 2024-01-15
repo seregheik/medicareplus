@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
+  useLocation
 } from "react-router-dom";
 
 import About from "./pages/About";
@@ -24,14 +25,14 @@ import {
   PrivacyPolicies,
 } from "./data";
 import Privacy from "./pages/PrivacyPolicy";
-
+import { AnimatePresence } from "framer-motion";
 
 
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<NavBar />}>
+    <Route  path="/" element={<NavBar />}>
       
       <Route path="*" element={<PageInvalid />} />
       <Route
@@ -62,7 +63,8 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+
+  return <AnimatePresence><RouterProvider router={router} /></AnimatePresence>;
 }
 
 export default App;

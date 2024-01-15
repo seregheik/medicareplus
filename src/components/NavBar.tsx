@@ -22,7 +22,7 @@ const NavBar = () => {
         </div>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto text-center">
-            <Nav.Link href="#">
+            <Nav.Link as='div' href="#">
               <ul className="navbar-nav">
                 <Nav.Link href="" className="nav-item"></Nav.Link>
                 <li className="nav-item">
@@ -50,7 +50,7 @@ const NavBar = () => {
             
           </Nav>
           <Nav>
-          <Nav.Link className="" href="">
+          <Nav.Link as='div' className="" href="#">
               <div className="nav d-flex justify-content-center ms-auto">
                 <div className="nav-link">
                   <Link to="log-in" className="btn btn-primary">
@@ -67,7 +67,7 @@ const NavBar = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Outlet />
+      <Outlet/>
       <section className="footer-bg">
         <Footer />
       </section>

@@ -3,21 +3,27 @@ import { Paper } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import ShopAd from '../components/ShopAd';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {Typewriter} from 'react-simple-typewriter';
 
 import CtaDownloadApp from "../components/CtaDownloadApp";
 import HowItWorks from "../components/HowItWorks";
 
 const Home = (props: any) => {
   return (
-    <div className="work-sans py-5">
+    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="work-sans py-5">
       <section id='hero' className="d-flex py-5 container medihale-intro">
-        <div className="row align-self-center">
+        <div style={{width:'100%'}} className="row align-self-center">
           <div className="col-sm-12 col-lg-6 pb-5 text-md-start text-sm-center intro-content">
-            <h1 className="fw-normal display-4  header-info">
-              <span className="text-secondary">{props.title}</span>
-              {props.information.homePageIntro}
+            <h1 className="fw-normal minheightdis display-5  header-info">
+              <span className="text-secondary fw-bold">
+                {props.title}</span>
+                <Typewriter words= {[props.information.homePageIntro, ' Committed to bringing you the best']}
+                loop={0}
+                />
+              
             </h1>
-            <p className="fs-4">{props.information.description}</p>
+            <p className="fs-5">{props.information.description}</p>
             <Link to='/sign-up' className="btn  btn-secondary">Start here</Link>
           </div>
           <div className="col-sm-12 col-lg-6 text-center image-container">
@@ -95,7 +101,7 @@ const Home = (props: any) => {
       <CtaDownloadApp/>
       </section>
      
-    </div>
+    </motion.div>
   );
 };
 

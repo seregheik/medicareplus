@@ -35,7 +35,7 @@ const ContactComponent = (props: {
   // console.log(featureMessage);
   return (
     <div>
-      <section id="how-it-works" className="bg-light d-flex">
+      <section id="how-it-works" className="bg-light pt-5 d-flex">
         <div className="align-self-center container">
           <div className="shop-header text-start text-primary">
             <div className="fs-6 fw-light work-sans shop-question">
