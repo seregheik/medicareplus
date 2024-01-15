@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  useLocation
+
 } from "react-router-dom";
 
 import About from "./pages/About";
