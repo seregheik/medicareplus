@@ -261,6 +261,7 @@
   box-shadow: 5px 1px 89px 5px rgba(131, 27, 131, 0.21) !important;
   -webkit-box-shadow: 5px 1px 89px 5px rgba(131, 27, 131, 0.21);
   -moz-box-shadow: 5px 1px 89px 5px rgba(131, 27, 131, 0.21);
+  background-color: #fff !important;
 }
 .comment-shadow:hover {
     box-shadow: 5px 1px 89px 5px rgba(131,27,131,0.53) !important;

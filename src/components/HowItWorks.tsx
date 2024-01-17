@@ -1,4 +1,5 @@
-import { Paper } from "@mui/material";
+// import { Paper } from "@mui/material";
+import { motion } from "framer-motion";
 import {
   ReactElement,
   JSXElementConstructor,
@@ -38,9 +39,9 @@ const HowItWorks = (props: {
       <section id="how-it-works" className="pt-5 bg-light d-flex">
         <div className="align-self-center container">
           <div className="shop-header text-start text-primary">
-            <div className="fs-4 fw-light work-sans shop-question">
+            <motion.div  className="fs-4 fw-light work-sans shop-question">
               <p>{props.information.feature}</p>
-            </div>
+            </motion.div>
             <div className="shop-header">
               <h1 className="header fs-1 fw-semibold">
                 {props.information.featureQuestion}
@@ -90,7 +91,8 @@ const HowItWorks = (props: {
                       className={"p-4 text-start col-md-6 col-sm-12 " + featuredmessage.appearance}
                       
                     >
-                      <Paper className="py-5  comment-shadow px-4 featured" elevation={0}>
+                 
+                      <motion.div initial={{x:0}} whileHover={{rotate: [3,-2,4,-5]}} className=" py-5 bg-light comment-shadow px-4 featured">
                         <div className="box-height">
                         <div className=" py-2 featured-icon text-secondary fs-3">
                           {featuredmessage.icon}
@@ -98,13 +100,14 @@ const HowItWorks = (props: {
                         <div className=" pt-2 featured-header ">
                           <h5 className="text-primary fw-semibold">
                             {featuredmessage.title}
-                          </h5>
+                          </h5> 
                         </div>
                         <div className="pt-3 featured-description">
                           {featuredmessage.text}
                         </div>
                         </div>
-                      </Paper>
+                      </motion.div>
+                      
                     </div>
                   );
                 }

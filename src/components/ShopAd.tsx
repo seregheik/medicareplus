@@ -1,5 +1,4 @@
-import React from "react";
-
+import { motion } from "framer-motion";
 const ShopAd = (props: { information: { AdSubHead: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; AdMainHead: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; AdImage: string | undefined; }; }) => {
     return (
         <div className="py-5">
@@ -18,9 +17,9 @@ const ShopAd = (props: { information: { AdSubHead: string | number | boolean | R
                         </div>
                     </div>
                     <div className="col-sm-12 col-md-6">
-                        <div className="image-handler">
-                            <img src={props.information.AdImage} alt="" className="img-fluid"/>
-                        </div>
+                        <motion.div initial={{}} animate={{rotate: -12, scale:0.7}} transition={{duration: 2}} className="image-handler">
+                            <img src={props.information.AdImage}  alt="" className="img-fluid"/>
+                        </motion.div>
                     </div>
                 </div>
             </div>
