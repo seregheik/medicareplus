@@ -86,7 +86,7 @@ const Signup = () => {
             />
           </div>
           <div className="d-grid gap-3 py-3">
-            <Button type="submit" className="btn btn-primary">
+            <Button disabled type="submit" className="btn btn-primary">
               Create Account
             </Button>
           </div>

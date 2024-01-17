@@ -269,6 +269,10 @@
     -moz-box-shadow: 5px 1px 89px 5px rgba(131,27,131,0.53);
 }
 
+.max-height{
+  height: 50vh;
+}
+
 .form-control:focus {
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
