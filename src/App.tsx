@@ -13,7 +13,7 @@ import Contact from "./pages/Contact";
 import FrequentlyAskedQuestions from "./pages/FrequentlyAskedQuestions";
 import PageInvalid from "./pages/PageInvalid";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login from "./pages/Login"; 
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import TermsAndConditions from "./pages/TermsAndConditions";
@@ -27,12 +27,13 @@ import {
 } from "./data";
 import Privacy from "./pages/PrivacyPolicy";
 import { AnimatePresence } from "framer-motion";
-
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+  
     <Route  path="/" element={<NavBar />}>
       
       <Route path="*" element={<PageInvalid />} />
@@ -60,12 +61,16 @@ const router = createBrowserRouter(
         element={<Home title={Title.title} information={HomePagecontent} />}
       />
     </Route>
+
   )
 );
 
 function App() {
+  
+  const client = new QueryClient();
 
-  return <AnimatePresence><RouterProvider router={router} /></AnimatePresence>;
+  return (
+  <QueryClientProvider client={client}><AnimatePresence><RouterProvider router={router} /></AnimatePresence></QueryClientProvider>);
 }
 
 export default App;

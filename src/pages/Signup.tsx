@@ -4,21 +4,23 @@ import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { motion } from 'framer-motion';
-
+import {yupResolver} from "@hookform/resolvers/yup"
+import { motion } from "framer-motion";
 
 const Signup = () => {
   const schema = yup.object().shape({
     firstname: yup.string().required("Enter Full name"),
     lastname: yup.string().required(),
-    email: yup.string().required(),
+    email: yup.string().email().required(),
+    gender: yup.string().required(),
+    phone_number: yup.number().integer().positive().required().min(10).max(13),
     password: yup.string().min(5).max(15).required(),
-    confirmpassword: yup
+    password_confirmation: yup
       .string()
       .oneOf([yup.ref("password")])
       .required(),
   });
+
   const {
     register,
     handleSubmit,
@@ -33,7 +35,12 @@ const Signup = () => {
   };
 
   return (
-    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="d-flex vh-75 justify-content-center py-5">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="d-flex vh-75 justify-content-center py-5"
+    >
       <Container className="w-75 text-center py-5" style={{ maxWidth: "30em" }}>
         <div className="login">
           <div className="team-main-title pb-5 text-primary fw-bold fs-4">
@@ -69,6 +76,28 @@ const Signup = () => {
           </div>
           <br />
           <div className="form-group">
+            <select
+              className="form-control form-select"
+              {...register("gender")}
+            >
+              <option selected disabled>
+                Select Gender
+              </option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <br />
+          <div className="form-group">
+            <input
+              type="phone"
+              className="form-control"
+              placeholder="Phone"
+              {...register("phone_number")}
+            />
+          </div>
+          <br />
+          <div className="form-group">
             <input
               type="password"
               className="form-control"
@@ -82,11 +111,12 @@ const Signup = () => {
               type="password"
               className="form-control"
               placeholder="Confirm Password"
-              {...register("confirmpassword")}
+              {...register("password_confirmation")}
             />
           </div>
+          <br />
           <div className="d-grid gap-3 py-3">
-            <Button disabled type="submit" className="btn btn-primary">
+            <Button type="submit" className="btn btn-primary">
               Create Account
             </Button>
           </div>
