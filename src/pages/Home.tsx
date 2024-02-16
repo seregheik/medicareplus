@@ -5,17 +5,12 @@ import ShopAd from '../components/ShopAd';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
-import { useQuery } from '@tanstack/react-query';
-import Axios from "axios"
 import CtaDownloadApp from "../components/CtaDownloadApp";
 import HowItWorks from "../components/HowItWorks";
 
 const Home = (props: any) => {
 
-  const { data } = useQuery({queryKey: ['user'], queryFn:  () => {
-    Axios.get("https://api.medihaleconsult.com/api/patient/data").then((res) => res.data)
-  }});
-console.log(data)
+ 
   
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="work-sans py-5">

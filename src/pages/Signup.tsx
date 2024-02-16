@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup"
 import { motion } from "framer-motion";
-import { Axios } from "axios";
+import Axios  from "axios";
 
 const Signup = () => {
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -35,7 +35,7 @@ const Signup = () => {
   const onSubmit = (data: any) => {
     
     alert("You have successfully created an account!");
-    
+   
   };
 
   return (
