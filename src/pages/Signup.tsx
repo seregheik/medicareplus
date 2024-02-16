@@ -4,33 +4,44 @@ import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import {yupResolver} from "@hookform/resolvers/yup"
+import { yupResolver } from "@hookform/resolvers/yup"
 import { motion } from "framer-motion";
+import { Axios } from "axios";
 
 const Signup = () => {
+  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
+
   const schema = yup.object().shape({
-    firstname: yup.string().required("Enter Full name"),
-    lastname: yup.string().required(),
-    email: yup.string().email().required(),
-    gender: yup.string().required(),
-    phone_number: yup.number().integer().positive().required().min(10).max(13),
-    password: yup.string().min(5).max(15).required(),
+    firstname: yup.string().required("Please Enter Your First Name"),
+    lastname: yup.string().required("Please Enter Your Last Name"),
+    email: yup.string().email().required('Enter a valid email address'),
+    gender: yup.string().required('Select your gender'),
+    phone_number: yup.string().matches(phoneRegExp, 'Phone number is not valid'),
+    password: yup.string().min(5).max(15).required('Enter a valid password'),
     password_confirmation: yup
       .string()
-      .oneOf([yup.ref("password")])
+      .oneOf([yup.ref("password")], "Password do not match")
       .required(),
   });
 
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
   const onSubmit = (data: any) => {
+    
     alert("You have successfully created an account!");
-
+    Axios.post('https://api.medihaleconsult.com/api/patient/register', data)
+    .then(function (res: any) {
+      console.log(res);
+    })
+    .catch(function (error: any) {
+      console.log(error);
+    });
     console.log(data);
   };
 
@@ -48,15 +59,19 @@ const Signup = () => {
           </div>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="First name"
-              {...register("firstname")}
-            />
+          <div>
+            <div className="form-group">
+
+              <input
+                type="text"
+                className="form-control"
+                placeholder="First name"
+                {...register("firstname")}
+              />
+            <p className=" text-start text-danger">{errors.firstname?.message}</p>
+            </div>
+            <br />
           </div>
-          <br />
           <div className="form-group">
             <input
               type="text"
@@ -64,6 +79,7 @@ const Signup = () => {
               placeholder="Last name"
               {...register("lastname")}
             />
+            <p className=" text-start text-danger">{errors.lastname?.message}</p>
           </div>
           <br />
           <div className="form-group">
@@ -73,6 +89,7 @@ const Signup = () => {
               placeholder="email"
               {...register("email")}
             />
+            <p className="text-start text-danger">{errors.email?.message}</p>
           </div>
           <br />
           <div className="form-group">
@@ -80,12 +97,13 @@ const Signup = () => {
               className="form-control form-select"
               {...register("gender")}
             >
-              <option selected disabled>
+              <option  disabled hidden selected>
                 Select Gender
               </option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
+            <p className=" text-start text-danger">{errors.gender?.message}</p>
           </div>
           <br />
           <div className="form-group">
@@ -95,6 +113,7 @@ const Signup = () => {
               placeholder="Phone"
               {...register("phone_number")}
             />
+            <p className=" text-start text-danger">{errors.phone_number?.message}</p>
           </div>
           <br />
           <div className="form-group">
@@ -104,6 +123,8 @@ const Signup = () => {
               placeholder="Password"
               {...register("password")}
             />
+            <p className=" text-start text-danger">{errors.password?.message}</p>
+
           </div>
           <br />
           <div className="form-group">
@@ -113,6 +134,8 @@ const Signup = () => {
               placeholder="Confirm Password"
               {...register("password_confirmation")}
             />
+            <p className=" text-start text-danger">{errors.password_confirmation?.message}</p>
+
           </div>
           <br />
           <div className="d-grid gap-3 py-3">
