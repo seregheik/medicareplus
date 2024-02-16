@@ -35,14 +35,7 @@ const Signup = () => {
   const onSubmit = (data: any) => {
     
     alert("You have successfully created an account!");
-    Axios.post('https://api.medihaleconsult.com/api/patient/register', data)
-    .then(function (res: any) {
-      console.log(res);
-    })
-    .catch(function (error: any) {
-      console.log(error);
-    });
-    console.log(data);
+    
   };
 
   return (
