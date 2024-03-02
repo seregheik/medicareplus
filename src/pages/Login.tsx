@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Axios from 'axios'
+import logo from '../assets/icons/logo.svg'
 
 const Login = () => {
 
@@ -30,6 +31,7 @@ const Login = () => {
 
       <Container className="w-75 text-center py-5" style={{ maxWidth: '30em' }}>
         <div className="login">
+          <div className="logo"><img src={logo} alt=""/></div>
           <div className="team-main-title pb-5 text-primary fw-bold fs-4">
             Sign In
           </div>
@@ -70,7 +72,10 @@ const Login = () => {
           >
             Sign Up
           </Link>
+          
         </span>
+        <br />
+          <Link to="http://" className="primary-color px-2 fw-semibold nav-link">Forgot Password</Link>
         {/* <GoogleAuth></GoogleAuth> */}
         {/* <AppleAuth></AppleAuth> */}
       </Container>
