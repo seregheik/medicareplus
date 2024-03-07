@@ -25,7 +25,7 @@ const Login = () => {
       console.log(res)
       if (res.request.status === 200){
         console.log(res.data.token)
-        localStorage.setItem('LoginToken', res.data.token)
+        localStorage.setItem('MediLoginToken', res.data.token)
         navigate('/profile');
       }
     }).catch((error) => {
