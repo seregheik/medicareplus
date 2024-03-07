@@ -6,6 +6,7 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Axios from 'axios'
 import logo from '../assets/icons/logo.svg'
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
@@ -13,15 +14,18 @@ const Login = () => {
     email: yup.string().email().required('Enter a valid email address'),
     password: yup.string().required()
   })
-
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: unknown) => {
     console.log(data)
     Axios.post('https://api.medihaleconsult.com/api/patient/login',data).then((res) => {
       console.log(res.data.message)
+      if (res.data.message === "Logged in successfully"){
+        navigate('/profile');
+      }
     }).catch((error) => {
       console.log(error)
     })
@@ -75,7 +79,7 @@ const Login = () => {
           
         </span>
         <br />
-          <Link to="http://" className="primary-color px-2 fw-semibold nav-link">Forgot Password</Link>
+          {/* <Link to="http://" className="primary-color px-2 fw-semibold nav-link">Forgot Password</Link> */}
         {/* <GoogleAuth></GoogleAuth> */}
         {/* <AppleAuth></AppleAuth> */}
       </Container>

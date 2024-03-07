@@ -14,7 +14,7 @@ import FrequentlyAskedQuestions from "./pages/FrequentlyAskedQuestions";
 import PageInvalid from "./pages/PageInvalid";
 import Home from "./pages/Home";
 import Login from "./pages/Login"; 
-import Profile from "./pages/Profile";
+import Profile from "./dashboard/Profile"
 import Signup from "./pages/Signup";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import NavBar from "./components/NavBar";
