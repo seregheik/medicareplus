@@ -22,8 +22,10 @@ const Login = () => {
   const onSubmit = (data: unknown) => {
     console.log(data)
     Axios.post('https://api.medihaleconsult.com/api/patient/login',data).then((res) => {
-      console.log(res.data.message)
-      if (res.data.message === "Logged in successfully"){
+      console.log(res)
+      if (res.request.status === 200){
+        console.log(res.data.token)
+        localStorage.setItem('LoginToken', res.data.token)
         navigate('/profile');
       }
     }).catch((error) => {
